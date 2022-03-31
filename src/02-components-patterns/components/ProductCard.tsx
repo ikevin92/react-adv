@@ -4,7 +4,11 @@ import styles from '../styles/styles.module.css';
 
 // hooks
 import { useProduct } from '../hooks/useProduct';
-import { ProductContextProps, Product } from '../interfaces/interfaces';
+import {
+  ProductContextProps,
+  Product,
+  onChangeArgs,
+} from '../interfaces/interfaces';
 
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
@@ -14,11 +18,20 @@ export interface Props {
   className?: string;
   product: Product;
   style?: CSSProperties;
+  onChange?: (args: onChangeArgs) => void;
+  value?: number;
 }
 
-export const ProductCard = ({ children, product, className, style }: Props) => {
+export const ProductCard = ({
+  children,
+  product,
+  className,
+  style,
+  onChange,
+  value,
+}: Props) => {
   // hook personalizado
-  const { counter, increaseBy } = useProduct();
+  const { counter, increaseBy } = useProduct({ onChange, product, value });
 
   return (
     <Provider
