@@ -17,8 +17,6 @@ export const useProduct = ({
   const [counter, setCounter] = useState<number>(initialValues?.count || value);
   const isMounted = useRef(false);
 
-  console.log(initialValues);
-
   // aumentar cantidad y disminuir
   const increaseBy = (value: number) => {
     let newValue = Math.max(counter + value, 0);
