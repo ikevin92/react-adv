@@ -1,4 +1,4 @@
-import { createContext, CSSProperties, ReactElement } from 'react';
+import { createContext, CSSProperties } from 'react';
 // estilos
 import styles from '../styles/styles.module.css';
 
