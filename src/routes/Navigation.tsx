@@ -4,9 +4,17 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom';
-import { RegisterPage } from '../03-forms/pages/RegisterPage';
-
+// Pages
+import {
+  FromikYupPage,
+  RegisterPage,
+  FromikComponents,
+  FromikBasicPage,
+  FromikAbstraction,
+} from '../03-forms/pages';
+// images
 import logo from '../logo.svg';
+
 
 export const Navigation = () => {
   return (
@@ -21,13 +29,29 @@ export const Navigation = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to='/about' activeClassName='nav-active' exact>
-                About
+              <NavLink to='/formik-basic' activeClassName='nav-active' exact>
+                Formik Basic
               </NavLink>
             </li>
             <li>
-              <NavLink to='/users' activeClassName='nav-active' exact>
-                Users
+              <NavLink to='/formik-yup' activeClassName='nav-active' exact>
+                Formik Yup
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/formik-components'
+                activeClassName='nav-active'
+                exact>
+                Formik Components
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/formik-abstraction'
+                activeClassName='nav-active'
+                exact>
+                Formik Abstraction
               </NavLink>
             </li>
           </ul>
@@ -39,11 +63,17 @@ export const Navigation = () => {
           <Route path='/register'>
             <RegisterPage />
           </Route>
-          <Route path='/users'>
-            <h1>Users</h1>
+          <Route path='/formik-basic'>
+            <FromikBasicPage />
           </Route>
-          <Route path='/'>
-            <h1>Home</h1>
+          <Route path='/formik-yup'>
+            <FromikYupPage />
+          </Route>
+          <Route path='/formik-components'>
+            <FromikComponents />
+          </Route>
+          <Route path='/formik-abstraction'>
+            <FromikAbstraction />
           </Route>
         </Switch>
       </div>
